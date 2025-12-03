@@ -1,3 +1,10 @@
 body {
   font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+
+  background-image: url("../images/Desktop-8.png");
+  background-size: contain;        /* картинка масштабируется полностью, не обрезается */
+  background-repeat: no-repeat;
+  background-position: top center; /* ставим ровно сверху */
 }
