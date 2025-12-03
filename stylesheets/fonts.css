@@ -1,0 +1,7 @@
+/* Подключение шрифта */
+@font-face {
+  font-family: 'Montserrat';
+  src: url('../fonts/Montserrat-ExtraBold.ttf') format('TrueType');
+  font-weight: 900;
+  font-style: normal;
+}

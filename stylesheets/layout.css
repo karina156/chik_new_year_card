@@ -1,10 +1,249 @@
-body {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  min-height: 100vh;
-
-  background-image: url("../images/Desktop-8.png");
-  background-size: contain;        /* картинка масштабируется полностью, не обрезается */
-  background-repeat: no-repeat;
-  background-position: top center; /* ставим ровно сверху */
+:root {
+  --yellow: #D9EE61;
+  --purple: #6552D0;
+  --black: #0E0E0E;
 }
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: #0E0E0E;
+}
+
+/* ОТКРЫТКА */
+
+.card {
+  position: relative;
+  width: 100vw;
+  height: 100vw; 
+  margin: 0;
+}
+
+
+.card__grid {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 25% 35% 40%;
+  grid-template-rows: 50% 50%;
+}
+
+/* ОБЩЕЕ ДЛЯ ЯЧЕЕК */
+
+.cell {
+  position: relative;
+}
+
+/* фоны */
+
+.cell--tl,
+.cell--br {
+  background: var(--yellow);
+}
+
+.cell--tr {
+  background: var(--black);
+}
+
+.cell--bl {
+  background: var(--purple);
+}
+
+/* РАСПОЛОЖЕНИЕ В ГРИДЕ */
+
+/* верхний левый*/
+.cell--tl {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  position: relative;
+  background: var(--yellow);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* с буквами */
+.chik-img {
+  width: 75%;
+  height: auto;
+  transform: rotate(-8deg); 
+  pointer-events: none;
+}
+
+/* верхний правый */
+.cell--tr {
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
+  position: relative;
+}
+
+/* нижний левый */
+.cell--bl {
+  grid-column: 1 / 3; 
+  grid-row: 2 / 3;
+  position: relative;
+}
+
+/* нижний правый: 40% */
+.cell--br {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  position: relative;
+}
+
+/* ПРАВЫЙ ВЕРХ (звезда)  */
+
+.star-shape {
+  position: absolute;
+  width: 30%;
+  height: auto;
+}
+
+/* ЛЕВЫЙ НИЖНИЙ (точки + шары — картинки) */
+
+.dot-img {
+  position: absolute;
+  width: 8%;
+  height: auto;
+}
+
+.dot-img--1 {
+  top: 12%;
+  left: 12%;
+}
+
+.dot-img--2 {
+  bottom: 22%;
+  left: 20%;
+}
+
+.bauble-img {
+  position: absolute;
+  height: auto;
+}
+
+.bauble-img--left {
+  width: 43%;
+  bottom: 5%;
+  left: 0%;
+}
+
+.bauble-img--right {
+  width: 37%;
+  bottom: 5%;
+  left: 38%;
+}
+
+/* ПРАВЫЙ НИЖНИЙ (круги + 2026 — картинки) */
+
+.corner-img {
+  position: absolute;
+  width: 43%;
+  height: auto;
+  bottom: -10%;
+  left: -10%;
+}
+
+.big-2026-img {
+  position: absolute;
+  width: 37%;
+  height: auto;
+  bottom: 14%;
+  right: 12%;
+}
+
+.dot-purple {
+  position: absolute;
+  width: 8%;
+  height: auto;
+}
+
+.dot-purple--1 {
+  top: 18%;
+  right: 26%;
+}
+
+.dot-purple--2 {
+  top: 38%;
+  right: 12%;
+}
+
+.dot-purple--3 {
+  bottom: 18%;
+  right: 6%;
+}
+
+.parrot {
+  position: absolute;
+  z-index: 10;
+
+  width: 66.5vw;     
+  right: 4vw;       
+  top: 5.5vw;       
+
+  height: auto;     
+  pointer-events: none;
+}
+/* ЛЕВЫЙ ШАР */
+.bauble-img--left {
+  position: absolute;
+  width: 50%;
+  bottom: 2%;
+  left: 0%;
+}
+
+/* ШАР 2026 — БОЛЬШОЙ */
+.big-2026-img {
+  position: absolute;
+  width: 85%;
+  bottom: -0%;
+  right: -6%;
+}
+/* ЖЁЛТЫЕ КРУГИ */
+.dot-img {
+  position: absolute;
+  width: 20%;
+  height: auto;
+}
+
+/* первый круг — сверху слева */
+.dot-img--1 {
+  top: 13%;
+  left: 2%;
+}
+
+/* второй круг — сверху справа */
+.dot-img--2 {
+  top: 8%;
+  left: 75%;
+}
+
+/* третий круг — снизу по центру */
+.dot-img--3 {
+  bottom: 0.5%;
+  left: 30%;
+}
+
+.cell--br {
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  position: relative;
+  overflow: hidden;
+}
+
+/* оба кадра */
+.dots-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation-play-state: running;
+}
+
+
+
+
+
+

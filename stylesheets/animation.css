@@ -1,0 +1,83 @@
+
+@keyframes starSwing {
+  0% {
+    transform: rotate(-15deg) scale(1);
+  }
+  25% {
+    transform: rotate(0deg) scale(1.08); /* увеличивается */
+  }
+  50% {
+    transform: rotate(15deg) scale(1);   /* нормальный размер */
+  }
+  75% {
+    transform: rotate(0deg) scale(0.92); /* чуть уменьшается */
+  }
+  100% {
+    transform: rotate(-15deg) scale(1);  /* возвращается в исходное */
+  }
+}
+
+.star-shape {
+  position: absolute;
+  top: 10%;
+  left: 6%;
+  width: 90%;
+  height: auto;
+
+  animation: starSwing 2s ease-in-out infinite;
+  transform-origin: center center;
+}
+@keyframes wiggle {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  20%  { transform: translate(-3%, -3%) rotate(-6deg); }
+  40%  { transform: translate(3%, 2%) rotate(4deg); }
+  60%  { transform: translate(-2%, 3%) rotate(-3deg); }
+  80%  { transform: translate(2%, -2%) rotate(3deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* Применяем анимацию при наведении */
+.dot-img:hover,
+.dot-purple:hover {
+  animation: wiggle 0.35s ease-in-out;
+}
+
+/* Пульсация: шар слегка увеличивается и уменьшается */
+@keyframes pulseBalls {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* ОБЩЕЕ ДЛЯ ОБОИХ ШАРОВ */
+.bauble-img,
+.big-2026-img {
+  animation: pulseBalls 1s ease-in-out infinite;
+  transform-origin: center center;
+  transition: transform 0.2s ease;
+}
+/* первый кадр: виден в первой половине цикла */
+.dots-frame--1 {
+  animation: dotsFrame1 1.2s linear infinite;
+}
+
+/* второй кадр: виден во второй половине цикла */
+.dots-frame--2 {
+  animation: dotsFrame2 1.2s linear infinite;
+}
+
+/* покадровая смена: 1 → 2 → 1 → 2 ... */
+@keyframes dotsFrame1 {
+  0%, 49%   { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes dotsFrame2 {
+  0%, 49%   { opacity: 0; }
+  50%, 100% { opacity: 1; }
+}
+/* ---------- ОСТАНОВКА ПРИ HOVER ---------- */
+
+.cell--br:hover .dots-frame {
+  animation-play-state: paused;
+}
