@@ -12,11 +12,11 @@ body {
 
 .text{
   padding: 1vw;
-
 }
-.text{
+.text1 p {
   font-size: 3vw;
-
+  color: #D9EE61;
+animation: text 8s linear;
 }
 /* ОТКРЫТКА */
 

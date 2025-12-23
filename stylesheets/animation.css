@@ -81,3 +81,8 @@
 .cell--br:hover .dots-frame {
   animation-play-state: paused;
 }
+@keyframes text{
+  0%{
+    transform: translateX();
+  }
+}
